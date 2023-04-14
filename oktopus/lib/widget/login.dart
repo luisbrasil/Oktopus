@@ -9,11 +9,22 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Login')),
-      body: ElevatedButton(
-        child: const Text('Entrar'),
-        onPressed: () {
-          Navigator.pushNamedAndRemoveUntil(context, Rotas.home, (Route<dynamic> route) => false);
-        },
+      body: Center(
+        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          ElevatedButton(
+            child: const Text('Entrar'),
+            onPressed: () {
+              Navigator.pushNamedAndRemoveUntil(
+                  context, Rotas.home, (Route<dynamic> route) => false);
+            },
+          ),
+          ElevatedButton(
+            child: const Text('Cadastrar-se'),
+            onPressed: () {
+              Navigator.pushNamed(context, Rotas.cadastroUsuario);
+            },
+          )
+        ]),
       ),
     );
   }

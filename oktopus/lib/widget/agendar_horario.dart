@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Agendamento extends StatelessWidget {
+class AgendarHorario extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Agendamento")),
+      appBar: AppBar(title: const Text("Agendar Horário")),
     );
   }
 }

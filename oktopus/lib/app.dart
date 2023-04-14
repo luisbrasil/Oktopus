@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oktopus/rotas.dart';
-import 'package:oktopus/widget/agendamento.dart';
+import 'package:oktopus/widget/agendar_horario.dart';
 import 'package:oktopus/widget/busca.dart';
 import 'package:oktopus/widget/cadastro_estudio.dart';
 import 'package:oktopus/widget/cadastro_usuario.dart';
@@ -24,7 +24,7 @@ class App extends StatelessWidget {
         Rotas.login: (context) => Login(),
         Rotas.home: (context) => Home(),
         Rotas.cadastroUsuario: (context) => CadastroUsuario(),
-        Rotas.agendamento: (context) => Agendamento(),
+        Rotas.agendarHorario: (context) => AgendarHorario(),
         Rotas.busca: (context) => Busca(),
         Rotas.cadastroEstudio: (context) => CadastroEstudio(),
         Rotas.chat: (context) => Chat(),
