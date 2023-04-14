@@ -6,8 +6,7 @@ class Rotas {
   static const login = 'login';
   static const estudio = 'estudio';
   static const reviews = 'reviews';
-  static const cadastroEstudio = 'cadastro-estudio';
   static const chat = 'chat';
   static const agendarHorario = 'agendar-horario';
-  
+  static const agendamentos = 'agendamentos';
 }

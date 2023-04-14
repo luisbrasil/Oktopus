@@ -18,9 +18,9 @@ class Home extends StatelessWidget {
             },
           ),
           ElevatedButton(
-            child: const Text('Cadastrar Estúdio'),
+            child: const Text('Meus Agendamentos'),
             onPressed: () {
-              Navigator.pushNamed(context, Rotas.cadastroEstudio);
+              Navigator.pushNamed(context, Rotas.agendamentos);
             },
           ),
           ElevatedButton(
