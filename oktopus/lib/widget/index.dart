@@ -10,20 +10,23 @@ class Index extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Introdução')),
       body: Center(
-        child: Row(children: [
-          ElevatedButton(
-            child: const Text('Login'),
-            onPressed: () {
-              Navigator.pushReplacementNamed(context, Rotas.login);
-            },
-          ),
-          ElevatedButton(
-            child: const Text('Cadastrar-se'),
-            onPressed: () {
-              Navigator.pushReplacementNamed(context, Rotas.cadastroUsuario);
-            },
-          )
-        ]),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              child: const Text('Login'),
+              onPressed: () {
+                Navigator.pushNamed(context, Rotas.login);
+              },
+            ),
+            ElevatedButton(
+              child: const Text('Cadastrar-se'),
+              onPressed: () {
+                Navigator.pushNamed(context, Rotas.cadastroUsuario);
+              },
+            )
+          ]
+        ),
       ),
     );
   }

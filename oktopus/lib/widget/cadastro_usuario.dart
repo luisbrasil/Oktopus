@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../rotas.dart';
-
 class CadastroUsuario extends StatelessWidget {
   const CadastroUsuario({super.key});
 
@@ -12,7 +10,7 @@ class CadastroUsuario extends StatelessWidget {
       body: ElevatedButton(
         child: const Text('Cadastrar-se'),
         onPressed: () {
-          Navigator.pushReplacementNamed(context, Rotas.index);
+          Navigator.pop(context, true);
         },
       ),
     );

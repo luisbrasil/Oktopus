@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Detalhes extends StatelessWidget {
-
+class Estudio extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
