@@ -1,2 +1,2 @@
 # Oktopus
-Projeto da discplina de DDM 2023 - Consiste em uma plataforma para oferta de serviços de tatuagem e piercing.
+Projeto da discplina de DDM 2023 - Consiste em uma plataforma que oferta serviços de tatuagem e piercing de diversos estúdios para os usuários.
