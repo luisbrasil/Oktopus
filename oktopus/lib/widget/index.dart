@@ -10,11 +10,16 @@ class Index extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Introdução')),
       body: Center(
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const Text(
+              "Bem-vindo ao Oktopus",
+              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 16),
             ElevatedButton(
-              child: const Text('Login'),
+              child: const Text('Entrar'),
               onPressed: () {
                 Navigator.pushReplacementNamed(context, Rotas.login);
               },
