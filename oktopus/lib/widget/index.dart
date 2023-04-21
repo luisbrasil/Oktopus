@@ -18,10 +18,15 @@ class Index extends StatelessWidget {
               style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
-            ElevatedButton(
-              child: const Text('Entrar'),
-              onPressed: () {
-                Navigator.pushReplacementNamed(context, Rotas.login);
+            FutureBuilder(
+              future: Future.delayed(const Duration(seconds: 2)),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.done) {
+                  WidgetsBinding.instance!.addPostFrameCallback((_) {
+                    Navigator.pushReplacementNamed(context, Rotas.login);
+                  });
+                }
+                return const CircularProgressIndicator();
               },
             ),
           ]

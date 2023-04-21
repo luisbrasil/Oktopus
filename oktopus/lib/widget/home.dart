@@ -10,26 +10,31 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Home')),
       body: Center(
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          ElevatedButton(
-            child: const Text('Estúdio Destaque'),
-            onPressed: () {
-              Navigator.pushNamed(context, Rotas.estudio);
-            },
-          ),
-          ElevatedButton(
-            child: const Text('Meus Agendamentos'),
-            onPressed: () {
-              Navigator.pushNamed(context, Rotas.agendamentos);
-            },
-          ),
-          ElevatedButton(
-            child: const Text('Buscar Estúdios'),
-            onPressed: () {
-              Navigator.pushNamed(context, Rotas.busca);
-            },
-          )
-        ]),
+        child: Column(
+          children: [
+            ElevatedButton(
+              child: const Text('Estúdio Destaque'),
+              onPressed: () {
+                Navigator.pushNamed(context, Rotas.estudio);
+              },
+            ),
+            const Spacer(),
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              ElevatedButton(
+                child: const Text('Meus Agendamentos'),
+                onPressed: () {
+                  Navigator.pushNamed(context, Rotas.agendamentos);
+                },
+              ),
+              ElevatedButton(
+                child: const Text('Buscar Estúdios'),
+                onPressed: () {
+                  Navigator.pushNamed(context, Rotas.busca);
+                },
+              )
+            ]),
+          ],
+        ),
       ),
     );
   }
