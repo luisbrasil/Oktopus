@@ -27,24 +27,19 @@ class Estudio extends StatelessWidget {
       ),
       body: Center(
         child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          ElevatedButton(
-            child: const Text('Agendar Horário'),
-            onPressed: () {
-              Navigator.pushNamed(context, Rotas.agendarHorario);
-            },
-          ),
-          ElevatedButton(
-            child: const Text('Reviews'),
-            onPressed: () {
-              Navigator.pushNamed(context, Rotas.reviews);
-            },
-          ),
-          ElevatedButton.icon(
-            icon: const Icon(Icons.calendar_today),
-            label: const Text('Agendar Horário'),
-            onPressed: () {
-              Navigator.pushNamed(context, Rotas.agendarHorario);
-            },
+          SizedBox(
+            width: 300,
+            height: 80,
+            child: ElevatedButton.icon(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green,
+              ),
+              icon: const Icon(Icons.calendar_today),
+              label: const Text('Agendar Horário'),
+              onPressed: () {
+                Navigator.pushNamed(context, Rotas.agendarHorario);
+              },
+            ),
           ),
         ]),
       ),

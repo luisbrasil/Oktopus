@@ -40,6 +40,9 @@ class CadastroUsuario extends StatelessWidget {
                   border: UnderlineInputBorder(),
                 ),
                 obscureText: true,
+                onEditingComplete: () {
+                  Navigator.pop(context, true);
+                },
               ),
               const SizedBox(height: 16.0),
               ElevatedButton(
