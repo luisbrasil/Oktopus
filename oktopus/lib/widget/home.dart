@@ -12,29 +12,46 @@ class Home extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            ElevatedButton(
-              child: const Text('Estúdio Destaque'),
-              onPressed: () {
-                Navigator.pushNamed(context, Rotas.estudio);
-              },
-            ),
-            const Spacer(),
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              ElevatedButton(
-                child: const Text('Meus Agendamentos'),
+            Card(
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+                ),
+                child: SizedBox(
+                  width: 250,
+                  height: 200,
+                  child: Image.asset('images/estudioteste.png', fit: BoxFit.cover),
+                ),
                 onPressed: () {
-                  Navigator.pushNamed(context, Rotas.agendamentos);
+                  Navigator.pushNamed(context, Rotas.estudio);
                 },
               ),
-              ElevatedButton(
-                child: const Text('Buscar Estúdios'),
-                onPressed: () {
-                  Navigator.pushNamed(context, Rotas.busca);
-                },
-              )
-            ]),
+            ),
+            const Spacer(),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.schedule),
+            label: 'Meus Agendamentos',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'Buscar Estúdios',
+          ),
+        ],
+        onTap: (int index) {
+          switch (index) {
+            case 0:
+              Navigator.pushNamed(context, Rotas.agendamentos);
+              break;
+            case 1:
+              Navigator.pushNamed(context, Rotas.busca);
+              break;
+          }
+        },
       ),
     );
   }

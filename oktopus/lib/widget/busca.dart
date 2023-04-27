@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../rotas.dart';
 
 class Busca extends StatelessWidget {
+  const Busca({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,23 +23,44 @@ class Busca extends StatelessWidget {
                 ),
               ),
               ElevatedButton(
-                child: const Text('Estudio 1'),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+                ),
+                child: SizedBox(
+                  width: 250,
+                  height: 200,
+                  child: Image.asset('images/estudioteste.png', fit: BoxFit.cover),
+                ),
                 onPressed: () {
                   Navigator.pushNamed(context, Rotas.estudio);
                 },
               ),
               ElevatedButton(
-                child: const Text('Estudio 2'),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+                ),
+                child: SizedBox(
+                  width: 250,
+                  height: 200,
+                  child: Image.asset('images/estudioteste.png', fit: BoxFit.cover),
+                ),
                 onPressed: () {
                   Navigator.pushNamed(context, Rotas.estudio);
                 },
               ),
               ElevatedButton(
-                child: const Text('Estudio 3'),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
+                ),
+                child: SizedBox(
+                  width: 250,
+                  height: 200,
+                  child: Image.asset('images/estudioteste.png', fit: BoxFit.cover),
+                ),
                 onPressed: () {
                   Navigator.pushNamed(context, Rotas.estudio);
                 },
-              )
+              ),
             ]),
       ),
     );

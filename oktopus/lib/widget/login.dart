@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
 
 import '../rotas.dart';
 
@@ -13,9 +14,14 @@ class Login extends StatelessWidget {
         child:
         FractionallySizedBox(
           widthFactor: 0.8,
-          heightFactor: 0.3,
+          heightFactor: 0.35,
           child: Column(
             children: [
+              const Text('Oktopus',
+                style: TextStyle(
+                  fontSize: 24, // Set the font size to 24
+                ),),
+              const SizedBox(height: 16),
               TextFormField(
                 decoration: const InputDecoration(
                     labelText: 'E-mail:', border: UnderlineInputBorder()),
@@ -48,6 +54,14 @@ class Login extends StatelessWidget {
                   ),
                 )
               ]),
+              const Spacer(),
+              SignInButton(
+                Buttons.Google,
+                onPressed: () {
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, Rotas.home, (Route<dynamic> route) => false);
+                },
+              )
             ],
           ),
         ),
