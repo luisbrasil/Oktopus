@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../rotas.dart';
+import '../../rotas.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});

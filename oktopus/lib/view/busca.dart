@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../rotas.dart';
+import '../../rotas.dart';
 
 class Busca extends StatelessWidget {
   const Busca({super.key});

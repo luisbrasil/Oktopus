@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../rotas.dart';
+import '../../rotas.dart';
 
 class AgendarHorario extends StatelessWidget {
   AgendarHorario({super.key});

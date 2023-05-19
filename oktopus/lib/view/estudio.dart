@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../rotas.dart';
+import '../../rotas.dart';
 
 class Estudio extends StatelessWidget {
   const Estudio({super.key});

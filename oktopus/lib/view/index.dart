@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../rotas.dart';
+import '../../rotas.dart';
 
 class Index extends StatelessWidget {
   const Index({super.key});
@@ -22,7 +22,7 @@ class Index extends StatelessWidget {
               future: Future.delayed(const Duration(seconds: 2)),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.done) {
-                  WidgetsBinding.instance!.addPostFrameCallback((_) {
+                  WidgetsBinding.instance.addPostFrameCallback((_) {
                     Navigator.pushReplacementNamed(context, Rotas.login);
                   });
                 }
