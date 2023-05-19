@@ -10,6 +10,7 @@ import 'package:oktopus/view/home.dart';
 import 'package:oktopus/view/index.dart';
 import 'package:oktopus/view//login.dart';
 import 'package:oktopus/view/reviews.dart';
+import 'package:oktopus/view/reviews_lista.dart';
 
 class App extends StatelessWidget {
   App({super.key});
@@ -28,7 +29,7 @@ class App extends StatelessWidget {
         Rotas.busca: (context) => Busca(),
         Rotas.chat: (context) => Chat(),
         Rotas.estudio: (context) => Estudio(),
-        Rotas.reviews: (context) => Reviews(),
+        Rotas.reviews: (context) => ReviewsLista(),
         Rotas.agendamentos: (context) => Agendamentos()
       },
     );

@@ -2,7 +2,7 @@ import 'package:oktopus/view/dto/agendamento.dart';
 import 'package:oktopus/view/dto/servico.dart';
 import 'package:oktopus/view/dto/usuario.dart';
 import 'package:oktopus/view/dto/estudio.dart';
-import 'package:oktopus/view/dto/reviews.dart';
+import 'package:oktopus/view/dto/review.dart';
 
 List<Agendamento> agendamentos = [
   Agendamento(usuario: usuarios[0], servico: servicos[0], data: DateTime.now()),
@@ -28,10 +28,13 @@ List<Estudio> estudios = [
 List<Servico> servicos = [
   Servico(estudio: estudios[0], nome: "Tatuagem nas Costas", descricao: "30x50", valor: 700),
   Servico(estudio: estudios[1], nome: "Tatuagem econômica", descricao: "5x5", valor: 50),
-  Servico(estudio: estudios[2], nome: "Tatuagem Chienesa", descricao: "BING CHILLING", valor: 100),
+  Servico(estudio: estudios[2], nome: "Tatuagem Chinesa", descricao: "BING CHILLING", valor: 100),
   Servico(estudio: estudios[3], nome: "Piercing no dedão do pé", descricao: "Não dói", valor: 70),
 ];
 
-List<Reviews> reviews = [
-  Reviews(agendamento: agendamentos[0], usuario: usuarios[0], descricao: "muito bom joinha", estrelas: 5),
+List<Review> reviews = [
+  Review(agendamento: agendamentos[0], usuario: usuarios[0], descricao: "muito bom joinha", estrelas: 5),
+  Review(agendamento: agendamentos[1], usuario: usuarios[1], descricao: "maluco meteu uma tatuagem de chiclete", estrelas: 2),
+  Review(agendamento: agendamentos[2], usuario: usuarios[2], descricao: "top do baile", estrelas: 5),
+  Review(agendamento: agendamentos[3], usuario: usuarios[3], descricao: "doeu pakas", estrelas: 1),
 ];

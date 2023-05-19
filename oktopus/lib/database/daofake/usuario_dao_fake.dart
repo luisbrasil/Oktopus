@@ -36,7 +36,6 @@ class UsuarioDAOFake implements UsuarioInterfaceDao{
       int i = (usuario.id as int) -1;
       usuarios[i] = usuario;
     }
-    print(usuario);
     return usuario;
   }
 }
