@@ -9,4 +9,6 @@ class Rotas {
   static const chat = 'chat';
   static const agendarHorario = 'agendar-horario';
   static const agendamentos = 'agendamentos';
+  static const reviewForm = 'review-form';
+  static const reviewDetalhe = 'review-detalhe';
 }

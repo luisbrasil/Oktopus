@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:oktopus/database/daofake/review_dao_fake.dart';
-import 'package:oktopus/rotas.dart';
+import 'package:oktopus/database/sqlite/review_dao_sqlite.dart';
 import 'package:oktopus/view/dto/review.dart';
 import 'package:oktopus/view/interface/review_interface_dao.dart';
 import 'package:oktopus/view/widget/barra_navegacao.dart';
-import 'package:oktopus/view/widget/botao_adicionar.dart';
 import 'package:oktopus/view/widget/painel_botoes.dart';
+
+import '../rotas.dart';
+import 'widget/botao_adicionar.dart';
 
 class ReviewsLista extends StatefulWidget {
   ReviewsLista({Key? key}) : super(key: key);
@@ -15,20 +16,21 @@ class ReviewsLista extends StatefulWidget {
 }
 
 class _ReviewsListaState extends State<ReviewsLista> {
-  ReviewInterfaceDao dao = ReviewDAOFake();
+  ReviewInterfaceDao dao = ReviewDAOSQLite();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Lista Reviews')),
-      body: criarLista(context),
-      // floatingActionButton: BotaoAdicionar(acao: ()=>Navigator.pushNamed(context, Rotas.reviewForm)),
-      bottomNavigationBar: const BarraNavegacao(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked
-    );
+        appBar: AppBar(title: const Text('Lista Reviews')),
+        body: criarLista(context),
+        floatingActionButton: BotaoAdicionar(
+            acao: () => Navigator.pushNamed(context, Rotas.reviewForm)),
+        bottomNavigationBar: const BarraNavegacao(),
+        floatingActionButtonLocation:
+            FloatingActionButtonLocation.centerDocked);
   }
 
-  Future<List<Review>> buscarReviews(){
+  Future<List<Review>> buscarReviews() {
     setState(() {});
     return dao.consultarTodos();
   }
@@ -36,9 +38,9 @@ class _ReviewsListaState extends State<ReviewsLista> {
   Widget criarLista(BuildContext context) {
     return FutureBuilder(
       future: buscarReviews(),
-      builder: (context,AsyncSnapshot<List<Review>> lista){
-        if(!lista.hasData) return const CircularProgressIndicator();
-        if(lista.data == null) return const Text('Não há reviews...');
+      builder: (context, AsyncSnapshot<List<Review>> lista) {
+        if (!lista.hasData) return const CircularProgressIndicator();
+        if (lista.data == null) return const Text('Não há reviews...');
         List<Review> listaReviews = lista.data!;
         return ListView.builder(
           itemCount: listaReviews.length,
@@ -51,22 +53,20 @@ class _ReviewsListaState extends State<ReviewsLista> {
     );
   }
 
-  Widget criarItemLista(BuildContext context, Review review){
+  Widget criarItemLista(BuildContext context, Review review) {
     return ItemLista(
-      review: review, 
-      alterar: () {
-        // Navigator.pushNamed(context, Rotas.reviewForm, arguments: review).
-        // then((value) => buscarReviews()); 
-        
-      },
-      detalhes: (){
-        // Navigator.pushNamed(context, Rotas.reviewDetalhe);
-      }, 
-      excluir: (){
-        dao.excluir(review.id);
-        buscarReviews();
-      } 
-    );
+        review: review,
+        alterar: () {
+          Navigator.pushNamed(context, Rotas.reviewForm, arguments: review)
+              .then((value) => buscarReviews());
+        },
+        detalhes: () {
+          Navigator.pushNamed(context, Rotas.reviewDetalhe);
+        },
+        excluir: () {
+          dao.excluir(review.id);
+          buscarReviews();
+        });
   }
 }
 
@@ -76,18 +76,21 @@ class ItemLista extends StatelessWidget {
   final VoidCallback detalhes;
   final VoidCallback excluir;
 
-  const ItemLista({required this.review,required this.alterar, required this.detalhes, required this.excluir, Key? key}) : super(key: key);
+  const ItemLista(
+      {required this.review,
+      required this.alterar,
+      required this.detalhes,
+      required this.excluir,
+      Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(  
-      leading: Text(review.agendamento.servico.nome),
+    return ListTile(
+      leading: Text(review.agendamento.toString()),
       title: Text(review.estrelas.toString() + "Estrelas"),
       subtitle: Text(review.descricao),
-      trailing: PainelBotoes(
-        alterar: alterar, 
-        excluir: excluir
-      ),
+      trailing: PainelBotoes(alterar: alterar, excluir: excluir),
       onTap: detalhes,
     );
   }
