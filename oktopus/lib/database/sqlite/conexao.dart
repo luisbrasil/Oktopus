@@ -9,7 +9,8 @@ class Conexao {
   static Future<Database> criar() async {
     if (_fechado) {
       String path = join(await getDatabasesPath(),
-          'banco.db'); //definindo o camminho do database
+          'banco.db');
+          deleteDatabase(path); //definindo o camminho do database
       _database = await openDatabase(
         path, // informando o caminho
         version: 1, // versão

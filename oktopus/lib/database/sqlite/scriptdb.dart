@@ -35,18 +35,18 @@ const criarReview = '''
 const insercoesReview = [
   '''
 INSERT INTO review (agendamento, descricao, estrelas)
-VALUES (0,'muito bom joinha',5')
+VALUES (0,'muito bom joinha',5)
 ''',
   '''
 INSERT INTO review (agendamento, descricao, estrelas)
-VALUES (1,'maluco meteu uma tatuagem de chiclete',2')
+VALUES (1,'maluco meteu uma tatuagem de chiclete',2)
 ''',
   '''
 INSERT INTO review (agendamento, descricao, estrelas)
-VALUES (2,'冰淇淋',5')
+VALUES (2,'冰淇淋',5)
 ''',
   '''
 INSERT INTO review (agendamento, descricao, estrelas)
-VALUES (3,'doeu pakas',1')
+VALUES (3,'doeu pakas',1)
 '''
 ];

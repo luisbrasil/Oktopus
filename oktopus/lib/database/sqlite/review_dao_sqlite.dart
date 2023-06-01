@@ -56,7 +56,7 @@ class ReviewDAOSQLite implements ReviewInterfaceDao {
   Review converterReview(Map<dynamic, dynamic> resultado) {
     return Review(
         id: resultado['id'],
-        agendamento: resultado['agendaemnto'],
+        agendamento: resultado['agendamento'],
         descricao: resultado['descricao'],
         estrelas: resultado['estrelas']);
   }

@@ -16,7 +16,7 @@ class ReviewsLista extends StatefulWidget {
 }
 
 class _ReviewsListaState extends State<ReviewsLista> {
-  ReviewInterfaceDao dao = ReviewDAOSQLite();
+  ReviewDAOSQLite dao = ReviewDAOSQLite();
 
   @override
   Widget build(BuildContext context) {
