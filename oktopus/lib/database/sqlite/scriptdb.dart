@@ -50,3 +50,16 @@ INSERT INTO review (agendamento, descricao, estrelas)
 VALUES (3,'doeu pakas',1)
 '''
 ];
+
+const criarAgendamento = '''
+ CREATE TABLE agendamento(
+    id INTEGER NOT NULL PRIMARY KEY
+    ,usuario INTEGER NOT NULL
+    ,servico INTEGER NOT NULL
+    ,descricao DATETIME NOT NULL
+  )
+''';
+
+const insercaoAgendamento = [
+
+];
