@@ -1,4 +1,6 @@
+import 'package:oktopus/database/sqlite/agendamento_dao_sqlite.dart';
 import 'package:oktopus/database/sqlite/conexao.dart';
+import 'package:oktopus/view/dto/agendamento.dart';
 import 'package:oktopus/view/dto/review.dart';
 import 'package:oktopus/view/interface/review_interface_dao.dart';
 import 'package:sqflite/sqlite_api.dart';
@@ -17,8 +19,12 @@ class ReviewDAOSQLite implements ReviewInterfaceDao {
   @override
   Future<List<Review>> consultarTodos() async {
     Database db = await Conexao.criar();
-    List<Review> lista =
-        (await db.query('review')).map<Review>(converterReview).toList();
+    List<Map<dynamic,dynamic>> resultadoBD = await db.query('review');
+    List<Review> lista = [];
+    for(var registro in resultadoBD){
+      var review = await converterReview(registro);
+      lista.add(review);
+    }
     return lista;
   }
 
@@ -46,14 +52,15 @@ class ReviewDAOSQLite implements ReviewInterfaceDao {
           estrelas: review.estrelas);
     } else {
       sql =
-          'UPDATE contato SET agendamento = ?, descricao =?, estrelas = ? WHERE id = ?';
+          'UPDATE review SET agendamento = ?, descricao =?, estrelas = ? WHERE id = ?';
       db.rawUpdate(sql,
           [review.agendamento, review.descricao, review.estrelas, review.id]);
     }
     return review;
   }
 
-  Review converterReview(Map<dynamic, dynamic> resultado) {
+  Future<Review> converterReview(Map<dynamic, dynamic> resultado) async {
+    Agendamento agendamento = await AgendamentoDAOSQLite().consultar(resultado['agendamento_id']);
     return Review(
         id: resultado['id'],
         agendamento: resultado['agendamento'],

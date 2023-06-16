@@ -46,7 +46,7 @@ class AgendamentoDAOSQLite implements AgendamentoInterfaceDao {
           data: agendamento.data);
     } else {
       sql =
-          'UPDATE contato SET agendamento = ?, descricao =?, estrelas = ? WHERE id = ?';
+          'UPDATE agendamento SET usuario = ?, servico = ?, data = ? WHERE id = ?';
       db.rawUpdate(sql,
           [agendamento.usuario, agendamento.servico, agendamento.data, agendamento.id]);
     }
