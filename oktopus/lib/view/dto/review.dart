@@ -3,7 +3,7 @@ import 'package:oktopus/view/dto/usuario.dart';
 
 class Review {
   final dynamic id;
-  final int agendamento;
+  final Agendamento agendamento;
   final String descricao;
   final int estrelas;
 

@@ -33,7 +33,7 @@ class App extends StatelessWidget {
         Rotas.reviews: (context) => ReviewsLista(),
         Rotas.reviewForm: (context) => ReviewForm(),
         Rotas.reviewDetalhe: (context) => ReviewDetalhe(),
-        Rotas.agendamentos: (context) => Agendamentos()
+        Rotas.agendamentos: (context) => Agendamentos(),
       },
     );
   }

@@ -7,10 +7,10 @@ class AgendamentoDAOSQLite implements AgendamentoInterfaceDao {
   @override
   Future<Agendamento> consultar(int id) async {
     Database db = await Conexao.criar();
-    List<Map> maps = await db.query('Agendamento', where: 'id = ?', whereArgs: [id]);
-    if (maps.isEmpty)
+    Map resultado = (await db.query('Agendamento', where: 'id = ?', whereArgs: [id])).first;
+    if (resultado.isEmpty){
       throw Exception('Não foi encontrado registro com este id');
-    Map<dynamic, dynamic> resultado = maps.first;
+    }
     return converterAgendamento(resultado);
   }
 
@@ -36,7 +36,7 @@ class AgendamentoDAOSQLite implements AgendamentoInterfaceDao {
     String sql;
     if (agendamento.id == null) {
       sql =
-          'INSERT INTO agendamento (usuario, servico, data) VALUES (?,?,?)';
+          'INSERT INTO agendamento (usuario_id, servico_id, data) VALUES (?,?,?)';
       int id = await db.rawInsert(
           sql, [agendamento.usuario, agendamento.servico, agendamento.data]);
       agendamento = Agendamento(
@@ -46,7 +46,7 @@ class AgendamentoDAOSQLite implements AgendamentoInterfaceDao {
           data: agendamento.data);
     } else {
       sql =
-          'UPDATE agendamento SET usuario = ?, servico = ?, data = ? WHERE id = ?';
+          'UPDATE agendamento SET usuario_id = ?, servico_id = ?, data = ? WHERE id = ?';
       db.rawUpdate(sql,
           [agendamento.usuario, agendamento.servico, agendamento.data, agendamento.id]);
     }

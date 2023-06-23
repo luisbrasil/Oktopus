@@ -1,9 +1,12 @@
+import 'package:oktopus/view/agendamentos.dart';
 import 'package:oktopus/view/dto/agendamento.dart';
 import 'package:oktopus/view/dto/servico.dart';
 import 'package:oktopus/view/dto/usuario.dart';
 import 'package:oktopus/view/dto/estudio.dart';
 import 'package:oktopus/view/dto/review.dart';
 
+
+/*
 List<Agendamento> agendamentos = [
   Agendamento(usuario: usuarios[0], servico: servicos[0], data: DateTime.now()),
   Agendamento(usuario: usuarios[1], servico: servicos[1], data: DateTime.now()),
@@ -73,11 +76,12 @@ List<Servico> servicos = [
 ];
 
 List<Review> reviews = [
-  Review(agendamento: 0, descricao: "muito bom joinha", estrelas: 5),
+  Review(agendamento: agendamentos[0], descricao: "muito bom joinha", estrelas: 5),
   Review(
-      agendamento: 1,
+      agendamento: agendamentos[1],
       descricao: "maluco meteu uma tatuagem de chiclete",
       estrelas: 2),
-  Review(agendamento: 2, descricao: "冰淇淋", estrelas: 5),
-  Review(agendamento: 3, descricao: "doeu pakas", estrelas: 1),
+  Review(agendamento: agendamentos[2], descricao: "冰淇淋", estrelas: 5),
+  Review(agendamento: agendamentos[3], descricao: "doeu pakas", estrelas: 1),
 ];
+*/

@@ -26,40 +26,56 @@ VALUES ('Felipe da Hora','034.071.910-90','lipedahora@gmail.com','https://cdn.pi
 const criarReview = '''
  CREATE TABLE review(
     id INTEGER NOT NULL PRIMARY KEY
-    ,agendamento INTEGER NOT NULL
+    ,agendamento_id INTEGER NOT NULL
     ,descricao VARCHAR(150) NOT NULL
     ,estrelas INTEGER NOT NULL
+    ,FOREIGN KEY (agendamento_id) REFERENCES agendamento (id) 
   )
 ''';
 
 const insercoesReview = [
   '''
-INSERT INTO review (agendamento, descricao, estrelas)
-VALUES (0,'muito bom joinha',5)
+INSERT INTO review (agendamento_id, descricao, estrelas)
+VALUES (1,'muito bom joinha',5)
 ''',
   '''
-INSERT INTO review (agendamento, descricao, estrelas)
-VALUES (1,'maluco meteu uma tatuagem de chiclete',2)
+INSERT INTO review (agendamento_id, descricao, estrelas)
+VALUES (2,'maluco meteu uma tatuagem de chiclete',2)
 ''',
   '''
-INSERT INTO review (agendamento, descricao, estrelas)
-VALUES (2,'冰淇淋',5)
+INSERT INTO review (agendamento_id, descricao, estrelas)
+VALUES (3,'冰淇淋',5)
 ''',
   '''
-INSERT INTO review (agendamento, descricao, estrelas)
-VALUES (3,'doeu pakas',1)
+INSERT INTO review (agendamento_id, descricao, estrelas)
+VALUES (4,'doeu pakas',1)
 '''
 ];
 
 const criarAgendamento = '''
  CREATE TABLE agendamento(
     id INTEGER NOT NULL PRIMARY KEY
-    ,usuario INTEGER NOT NULL
-    ,servico INTEGER NOT NULL
-    ,descricao DATETIME NOT NULL
+    ,usuario_id INTEGER NOT NULL
+    ,servico_id INTEGER NOT NULL
+    ,data DATETIME NOT NULL
   )
 ''';
 
 const insercaoAgendamento = [
-
+  '''
+INSERT INTO agendamento (usuario_id, servico_id, data)
+VALUES (1,1,'2023-06-10 17:30:00')
+''',
+  '''
+INSERT INTO agendamento (usuario_id, servico_id, data)
+VALUES (2,2,'2023-06-11 17:30:00')
+''',
+  '''
+INSERT INTO agendamento (usuario_id, servico_id, data)
+VALUES (3,3,'2023-06-12 17:30:00')
+''',
+  '''
+INSERT INTO agendamento (usuario_id, servico_id, data)
+VALUES (4,4,'2023-06-14 17:30:00')
+'''
 ];
