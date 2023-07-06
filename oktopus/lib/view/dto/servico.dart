@@ -14,4 +14,7 @@ class Servico{
     required this.descricao,
     required this.valor,
   });
+
+  @override
+  bool operator ==(other) => other is Servico && other.id == id;
 }

@@ -8,4 +8,7 @@ class Estudio{
     required this.nome,
     required this.descricao
   });
+
+  @override
+  bool operator ==(other) => other is Estudio && other.id == id;
 }

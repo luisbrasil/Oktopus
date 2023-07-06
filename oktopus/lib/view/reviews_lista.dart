@@ -61,7 +61,7 @@ class _ReviewsListaState extends State<ReviewsLista> {
               .then((value) => buscarReviews());
         },
         detalhes: () {
-          Navigator.pushNamed(context, Rotas.reviewDetalhe);
+          Navigator.pushNamed(context, Rotas.reviewDetalhe, arguments: review);
         },
         excluir: () {
           dao.excluir(review.id);

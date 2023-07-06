@@ -13,4 +13,8 @@ class Agendamento{
     required this.servico,
     required this.data
   });
+
+  @override
+  bool operator ==(other) =>
+      other is Agendamento && other.id == id;
 }

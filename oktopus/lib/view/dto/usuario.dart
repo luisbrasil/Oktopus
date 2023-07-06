@@ -12,4 +12,7 @@ class Usuario{
     required this.email,
     required this.urlAvatar,
   });
+
+  @override
+  bool operator ==(other) => other is Usuario && other.id == id;
 }

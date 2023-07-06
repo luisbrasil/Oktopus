@@ -13,4 +13,7 @@ class Review {
     required this.descricao,
     required this.estrelas,
   });
+
+  @override
+  bool operator ==(other) => other is Review && other.id == id;
 }

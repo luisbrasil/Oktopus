@@ -56,8 +56,8 @@ class AgendamentoDAOSQLite implements AgendamentoInterfaceDao {
   Agendamento converterAgendamento(Map<dynamic, dynamic> resultado) {
     return Agendamento(
         id: resultado['id'],
-        usuario: resultado['usuario'],
-        servico: resultado['servico'],
-        data: resultado['data']);
+        usuario: resultado['usuario_id'],
+        servico: resultado['servico_id'],
+        data: DateTime.parse(resultado['data']));
   }
 }
