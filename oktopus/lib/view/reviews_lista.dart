@@ -87,7 +87,7 @@ class ItemLista extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Text(review.agendamento.toString()),
+      leading: Text(review.agendamento.data.toString()),
       title: Text(review.estrelas.toString() + "Estrelas"),
       subtitle: Text(review.descricao),
       trailing: PainelBotoes(alterar: alterar, excluir: excluir),

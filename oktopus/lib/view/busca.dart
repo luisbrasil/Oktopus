@@ -29,7 +29,7 @@ class Busca extends StatelessWidget {
                 child: SizedBox(
                   width: 250,
                   height: 200,
-                  child: Image.asset('images/estudioteste.png', fit: BoxFit.cover),
+                  child: Image.asset('assets/images/estudioteste.png', fit: BoxFit.cover),
                 ),
                 onPressed: () {
                   Navigator.pushNamed(context, Rotas.estudio);
@@ -42,7 +42,7 @@ class Busca extends StatelessWidget {
                 child: SizedBox(
                   width: 250,
                   height: 200,
-                  child: Image.asset('images/estudioteste.png', fit: BoxFit.cover),
+                  child: Image.asset('assets/images/estudioteste.png', fit: BoxFit.cover),
                 ),
                 onPressed: () {
                   Navigator.pushNamed(context, Rotas.estudio);
@@ -55,7 +55,7 @@ class Busca extends StatelessWidget {
                 child: SizedBox(
                   width: 250,
                   height: 200,
-                  child: Image.asset('images/estudioteste.png', fit: BoxFit.cover),
+                  child: Image.asset('assets/images/estudioteste.png', fit: BoxFit.cover),
                 ),
                 onPressed: () {
                   Navigator.pushNamed(context, Rotas.estudio);

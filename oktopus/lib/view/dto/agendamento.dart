@@ -15,6 +15,6 @@ class Agendamento{
   });
 
   @override
-  bool operator ==(other) =>
+  bool operator == (other) =>
       other is Agendamento && other.id == id;
 }
