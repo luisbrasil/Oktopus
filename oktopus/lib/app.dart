@@ -12,6 +12,9 @@ import 'package:oktopus/view//login.dart';
 import 'package:oktopus/view/review_detalhe.dart';
 import 'package:oktopus/view/review_form.dart';
 import 'package:oktopus/view/reviews_lista.dart';
+import 'package:oktopus/view/usuario_detalhe.dart';
+import 'package:oktopus/view/usuario_form.dart';
+import 'package:oktopus/view/usuarios_lista.dart';
 
 class App extends StatelessWidget {
   App({super.key});
@@ -34,6 +37,9 @@ class App extends StatelessWidget {
         Rotas.reviewForm: (context) => ReviewForm(),
         Rotas.reviewDetalhe: (context) => ReviewDetalhe(),
         Rotas.agendamentos: (context) => Agendamentos(),
+        Rotas.usuarioDetalhe: (context) => UsuarioDetalhe(),
+        Rotas.usuariosLista: (context) => UsuariosLista(),
+        Rotas.usuarioForm: (context) => UsuarioForm(),
       },
     );
   }

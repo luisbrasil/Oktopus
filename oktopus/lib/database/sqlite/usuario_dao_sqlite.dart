@@ -47,7 +47,7 @@ class UsuarioDAOSQLite implements UsuarioInterfaceDao {
           urlAvatar: usuario.urlAvatar);
     } else {
       sql =
-          'UPDATE contato SET nome = ?, cpf =?, email = ?, url_avatar= ? WHERE id = ?';
+          'UPDATE usuario SET nome = ?, cpf =?, email = ?, url_avatar= ? WHERE id = ?';
       db.rawUpdate(sql, [
         usuario.nome,
         usuario.cpf,

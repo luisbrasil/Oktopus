@@ -15,10 +15,12 @@ class Conexao {
         path, // informando o caminho
         version: 1, // versão
         onCreate: (db, v) {
+          db.execute(criarUsuario);
           db.execute(criarAgendamento);
           db.execute(criarReview);
           insercaoAgendamento.forEach(db.execute);
           insercoesReview.forEach(db.execute);
+          insercoesUsuario.forEach(db.execute);
         },
       );
       _fechado = false;

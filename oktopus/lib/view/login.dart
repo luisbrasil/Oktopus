@@ -11,16 +11,17 @@ class Login extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Login')),
       body: Center(
-        child:
-        FractionallySizedBox(
+        child: FractionallySizedBox(
           widthFactor: 0.8,
-          heightFactor: 0.35,
+          heightFactor: 0.5,
           child: Column(
             children: [
-              const Text('Oktopus',
+              const Text(
+                'Oktopus',
                 style: TextStyle(
                   fontSize: 24, // Set the font size to 24
-                ),),
+                ),
+              ),
               const SizedBox(height: 16),
               TextFormField(
                 decoration: const InputDecoration(
@@ -54,14 +55,23 @@ class Login extends StatelessWidget {
                   ),
                 )
               ]),
+              Expanded(
+                  child: ElevatedButton(
+                child: const Text('Gerenciar Usuários'),
+                onPressed: () {
+                  Navigator.pushNamed(
+                      context, Rotas.usuariosLista);
+                },
+              )),
               const Spacer(),
-              SignInButton(
+              Expanded(
+                  child: SignInButton(
                 Buttons.Google,
                 onPressed: () {
                   Navigator.pushNamedAndRemoveUntil(
                       context, Rotas.home, (Route<dynamic> route) => false);
                 },
-              )
+              ))
             ],
           ),
         ),

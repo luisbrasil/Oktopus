@@ -11,4 +11,7 @@ class Rotas {
   static const agendamentos = 'agendamentos';
   static const reviewForm = 'review-form';
   static const reviewDetalhe = 'review-detalhe';
+  static const usuariosLista = 'usuarios-lista';
+  static const usuarioDetalhe = 'usuario-detalhe';
+  static const usuarioForm = 'usuario-form';
 }
