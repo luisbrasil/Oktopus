@@ -20,6 +20,10 @@ VALUES ('Vinicius Koiti','289.957.110-94', 'viniciuskoiti@gmail.com','https://cd
   '''
 INSERT INTO usuario (nome, cpf, email, url_avatar)
 VALUES ('Felipe da Hora','034.071.910-90','lipedahora@gmail.com','https://cdn.pixabay.com/photo/2017/04/30/11/42/hijab-2272708_1280.png')
+''',
+  '''
+INSERT INTO usuario (nome, cpf, email, url_avatar)
+VALUES ('Rafael Scarpelli','123.432.123-22','rafaelscarpelli@gmail.com','https://uploads.spiritfanfiction.com/historias/capas/202009/thats-my-girl--imagine-nayeon-twice-20504992-160920201356.png')
 '''
 ];
 
@@ -58,6 +62,8 @@ const criarAgendamento = '''
     ,usuario_id INTEGER NOT NULL
     ,servico_id INTEGER NOT NULL
     ,data DATETIME NOT NULL
+    ,FOREIGN KEY (usuario_id) REFERENCES usuario (id) 
+    ,FOREIGN KEY (servico_id) REFERENCES servico (id) 
   )
 ''';
 
@@ -78,4 +84,33 @@ VALUES (3,3,'2023-06-12 17:30:00')
 INSERT INTO agendamento (usuario_id, servico_id, data)
 VALUES (4,4,'2023-06-14 17:30:00')
 '''
+];
+
+const criarServico = '''
+ CREATE TABLE servico(
+    id INTEGER NOT NULL PRIMARY KEY
+    ,estudio_id INTEGER NOT NULL
+    ,nome VARCHAR(50) NOT NULL
+    ,descricao VARCHAR(255) NOT NULL
+    ,valor FLOAT NOT NULL
+  )
+''';
+
+const insercoesServico = [
+  '''
+  INSERT INTO servico (estudio_id, nome, descricao, valor)
+  VALUES (1,'Tatuagem nas Costas','30x50',700)
+  ''',
+  '''
+  INSERT INTO servico (estudio_id, nome, descricao, valor)
+  VALUES (2,'Tatuagem econômica','5x5',50)
+  ''',
+  '''
+  INSERT INTO servico (estudio_id, nome, descricao, valor)
+  VALUES (3,'Tatuagem Chinesa','BING CHILLING',100)
+  ''',
+  '''
+  INSERT INTO servico (estudio_id, nome, descricao, valor)
+  VALUES (4,'Piercing no dedão do pé','Não dói',70)
+  ''',
 ];

@@ -2,7 +2,7 @@ import 'package:oktopus/view/dto/estudio.dart';
 
 class Servico{
   final dynamic id;
-  final Estudio estudio;
+  final int estudio;
   final String nome;
   final String descricao;
   final double valor;

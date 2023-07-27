@@ -1,5 +1,9 @@
 import 'package:oktopus/database/sqlite/conexao.dart';
+import 'package:oktopus/database/sqlite/pessoa_dao_sqlite.dart';
+import 'package:oktopus/database/sqlite/servico_dao_sqlite.dart';
 import 'package:oktopus/view/dto/agendamento.dart';
+import 'package:oktopus/view/dto/servico.dart';
+import 'package:oktopus/view/dto/usuario.dart';
 import 'package:oktopus/view/interface/agendamento_interface_dao.dart';
 import 'package:sqflite/sqlite_api.dart';
 
@@ -17,8 +21,12 @@ class AgendamentoDAOSQLite implements AgendamentoInterfaceDao {
   @override
   Future<List<Agendamento>> consultarTodos() async {
     Database db = await Conexao.criar();
-    List<Agendamento> lista =
-        (await db.query('agendamento')).map<Agendamento>(converterAgendamento).toList();
+    List<Map<dynamic,dynamic>> resultadoBD = await db.query('agendamento');
+    List<Agendamento> lista = [];
+    for(var registro in resultadoBD){
+      var agendamento = await converterAgendamento(registro);
+      lista.add(agendamento);
+    }
     return lista;
   }
 
@@ -53,11 +61,13 @@ class AgendamentoDAOSQLite implements AgendamentoInterfaceDao {
     return agendamento;
   }
 
-  Agendamento converterAgendamento(Map<dynamic, dynamic> resultado) {
+  Future<Agendamento> converterAgendamento(Map<dynamic, dynamic> resultado) async {
+    Usuario usuario = await UsuarioDAOSQLite().consultar(resultado['usuario_id']);
+    Servico servico = await ServicoDAOSQLite().consultar(resultado['servico_id']);
     return Agendamento(
         id: resultado['id'],
-        usuario: resultado['usuario_id'],
-        servico: resultado['servico_id'],
+        usuario: usuario,
+        servico: servico,
         data: DateTime.parse(resultado['data']));
   }
 }

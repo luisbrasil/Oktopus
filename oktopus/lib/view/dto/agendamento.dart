@@ -3,8 +3,8 @@ import 'package:oktopus/view/dto/usuario.dart';
 
 class Agendamento{
   final dynamic id;
-  final int usuario;
-  final int servico;
+  final Usuario usuario;
+  final Servico servico;
   final DateTime data;
 
   Agendamento({

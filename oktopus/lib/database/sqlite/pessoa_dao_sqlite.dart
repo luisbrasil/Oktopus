@@ -66,6 +66,6 @@ class UsuarioDAOSQLite implements UsuarioInterfaceDao {
         nome: resultado['nome'],
         cpf: resultado['cpf'],
         email: resultado['email'],
-        urlAvatar: resultado['urlAvatar']);
+        urlAvatar: resultado['url_avatar']);
   }
 }

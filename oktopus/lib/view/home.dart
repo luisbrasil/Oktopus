@@ -45,7 +45,7 @@ class Home extends StatelessWidget {
         onTap: (int index) {
           switch (index) {
             case 0:
-              Navigator.pushNamed(context, Rotas.agendamentos);
+              Navigator.pushNamed(context, Rotas.agendamentosLista);
               break;
             case 1:
               Navigator.pushNamed(context, Rotas.busca);

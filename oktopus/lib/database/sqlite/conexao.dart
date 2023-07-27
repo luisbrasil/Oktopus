@@ -16,11 +16,13 @@ class Conexao {
         version: 1, // versão
         onCreate: (db, v) {
           db.execute(criarUsuario);
+          db.execute(criarServico);
           db.execute(criarAgendamento);
           db.execute(criarReview);
+          insercoesUsuario.forEach(db.execute);
+          insercoesServico.forEach(db.execute);
           insercaoAgendamento.forEach(db.execute);
           insercoesReview.forEach(db.execute);
-          insercoesUsuario.forEach(db.execute);
         },
       );
       _fechado = false;

@@ -39,7 +39,7 @@ class _CampoOpcoesAgendamentoState extends State<CampoOpcoesAgendamento> {
                   DropdownMenuItem(value: agendamento, child: Text(agendamento.data.toString())))
               .toList();
           return DropdownButtonFormField<Agendamento>(
-              hint: const Text('agendamento onde mora'),
+              hint: const Text('Agendamento:'),
               isExpanded: true,
               items: itensAgendamento,
               value: widget.opcaoSelecionado,

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:oktopus/rotas.dart';
+import 'package:oktopus/view/agendamento_detalhe.dart';
+import 'package:oktopus/view/agendamento_form.dart';
 import 'package:oktopus/view/agendamentos.dart';
+import 'package:oktopus/view/agendamentos_lista.dart';
 import 'package:oktopus/view/agendar_horario.dart';
 import 'package:oktopus/view/busca.dart';
 import 'package:oktopus/view/cadastro_usuario.dart';
@@ -40,6 +43,9 @@ class App extends StatelessWidget {
         Rotas.usuarioDetalhe: (context) => UsuarioDetalhe(),
         Rotas.usuariosLista: (context) => UsuariosLista(),
         Rotas.usuarioForm: (context) => UsuarioForm(),
+        Rotas.agendamentosLista: (context) => AgendamentosLista(),
+        Rotas.agendamentoDetalhe: (context) => AgendamentoDetalhe(),
+        Rotas.agendamentoForm: (context) => AgendamentoForm(),
       },
     );
   }
