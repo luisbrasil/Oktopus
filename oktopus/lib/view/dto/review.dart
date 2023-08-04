@@ -1,5 +1,4 @@
 import 'package:oktopus/view/dto/agendamento.dart';
-import 'package:oktopus/view/dto/usuario.dart';
 
 class Review {
   final dynamic id;

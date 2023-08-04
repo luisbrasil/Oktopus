@@ -36,7 +36,8 @@ class _CampoOpcoesAgendamentoState extends State<CampoOpcoesAgendamento> {
           List<Agendamento> agendamentos = resultado.data!;
           List<DropdownMenuItem<Agendamento>> itensAgendamento = agendamentos
               .map((agendamento) =>
-                  DropdownMenuItem(value: agendamento, child: Text(agendamento.data.toString())))
+                  DropdownMenuItem(value: agendamento, child: Text('${agendamento.data.day
+                  }/${agendamento.data.month}/${agendamento.data.year} - ${agendamento.servico.nome}')))
               .toList();
           return DropdownButtonFormField<Agendamento>(
               hint: const Text('Agendamento:'),

@@ -1,11 +1,3 @@
-import 'package:oktopus/view/agendamentos.dart';
-import 'package:oktopus/view/dto/agendamento.dart';
-import 'package:oktopus/view/dto/servico.dart';
-import 'package:oktopus/view/dto/usuario.dart';
-import 'package:oktopus/view/dto/estudio.dart';
-import 'package:oktopus/view/dto/review.dart';
-
-
 /*
 List<Agendamento> agendamentos = [
   Agendamento(usuario: usuarios[0], servico: servicos[0], data: DateTime.now()),

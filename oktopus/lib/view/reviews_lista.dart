@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oktopus/database/sqlite/review_dao_sqlite.dart';
 import 'package:oktopus/view/dto/review.dart';
-import 'package:oktopus/view/interface/review_interface_dao.dart';
 import 'package:oktopus/view/widget/barra_navegacao.dart';
 import 'package:oktopus/view/widget/painel_botoes.dart';
 
@@ -87,7 +86,8 @@ class ItemLista extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Text(review.agendamento.data.toString()),
+      leading: Text('${review.agendamento.data.day
+      }/${review.agendamento.data.month}/${review.agendamento.data.year}'),
       title: Text(review.estrelas.toString() + "Estrelas"),
       subtitle: Text(review.descricao),
       trailing: PainelBotoes(alterar: alterar, excluir: excluir),

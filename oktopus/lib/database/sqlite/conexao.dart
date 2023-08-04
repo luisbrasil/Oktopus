@@ -19,10 +19,12 @@ class Conexao {
           db.execute(criarServico);
           db.execute(criarAgendamento);
           db.execute(criarReview);
+          db.execute(criarEstudioFavorito);
           insercoesUsuario.forEach(db.execute);
           insercoesServico.forEach(db.execute);
           insercaoAgendamento.forEach(db.execute);
           insercoesReview.forEach(db.execute);
+          insercoesEstudiosFavorito.forEach(db.execute);
         },
       );
       _fechado = false;

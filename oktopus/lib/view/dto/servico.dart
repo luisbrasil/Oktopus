@@ -1,5 +1,3 @@
-import 'package:oktopus/view/dto/estudio.dart';
-
 class Servico{
   final dynamic id;
   final int estudio;

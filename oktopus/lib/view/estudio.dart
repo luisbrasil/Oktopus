@@ -37,7 +37,7 @@ class Estudio extends StatelessWidget {
               icon: const Icon(Icons.calendar_today),
               label: const Text('Agendar Horário'),
               onPressed: () {
-                Navigator.pushNamed(context, Rotas.agendarHorario);
+                Navigator.pushNamed(context, Rotas.agendamentoForm);
               },
             ),
           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oktopus/database/sqlite/agendamento_dao_sqlite.dart';
+import 'package:oktopus/infra/converters/date_converter.dart';
 import 'package:oktopus/view/dto/agendamento.dart';
 import 'package:oktopus/view/widget/barra_navegacao.dart';
 import 'package:oktopus/view/widget/painel_botoes.dart';
@@ -23,7 +24,8 @@ class _AgendamentosListaState extends State<AgendamentosLista> {
         appBar: AppBar(title: const Text('Lista Agendamentos')),
         body: criarLista(context),
         floatingActionButton: BotaoAdicionar(
-            acao: () => Navigator.pushNamed(context, Rotas.agendamentoForm).then((value)=>buscarAgendamentos())),
+            acao: () => Navigator.pushNamed(context, Rotas.agendamentoForm)
+                .then((value) => buscarAgendamentos())),
         bottomNavigationBar: const BarraNavegacao(),
         floatingActionButtonLocation:
             FloatingActionButtonLocation.centerDocked);
@@ -56,10 +58,13 @@ class _AgendamentosListaState extends State<AgendamentosLista> {
     return ItemLista(
         agendamento: agendamento,
         alterar: () {
-          Navigator.pushNamed(context, Rotas.agendamentoForm, arguments: agendamento).then((value)=>buscarAgendamentos());
+          Navigator.pushNamed(context, Rotas.agendamentoForm,
+                  arguments: agendamento)
+              .then((value) => buscarAgendamentos());
         },
         detalhes: () {
-          Navigator.pushNamed(context, Rotas.agendamentoDetalhe, arguments: agendamento);
+          Navigator.pushNamed(context, Rotas.agendamentoDetalhe,
+              arguments: agendamento);
         },
         excluir: () {
           dao.excluir(agendamento.id);
@@ -84,8 +89,14 @@ class ItemLista extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    DateConverter dateConverter = DateConverter();
+
     return ListTile(
-      leading: Text(agendamento.data.toString()),
+      leading: FractionallySizedBox(
+        widthFactor: 0.25, // Set the width factor to 25% (0.25)
+        child: Text(
+            '${dateConverter.GetDateBrazilPattern(agendamento.data)} ${dateConverter.GetTimeBrazilPattern(agendamento.data)}'),
+      ),
       title: Text("Usuário:${agendamento.usuario.nome}"),
       subtitle: Text("Servico:${agendamento.servico.nome}"),
       trailing: PainelBotoes(alterar: alterar, excluir: excluir),

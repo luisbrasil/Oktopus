@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oktopus/database/sqlite/usuario_dao_sqlite.dart';
 import 'package:oktopus/view/dto/usuario.dart';
-import 'package:oktopus/view/interface/usuario_interface_dao.dart';
 import 'package:oktopus/view/widget/barra_navegacao.dart';
 import 'package:oktopus/view/widget/foto_usuario.dart';
 import 'package:oktopus/view/widget/painel_botoes.dart';

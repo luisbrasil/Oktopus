@@ -1,6 +1,4 @@
-import 'package:oktopus/database/sqlite/agendamento_dao_sqlite.dart';
 import 'package:oktopus/database/sqlite/conexao.dart';
-import 'package:oktopus/view/dto/agendamento.dart';
 import 'package:oktopus/view/dto/servico.dart';
 import 'package:oktopus/view/interface/servico_interface_dao.dart';
 import 'package:sqflite/sqlite_api.dart';

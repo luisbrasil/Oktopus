@@ -114,3 +114,60 @@ const insercoesServico = [
   VALUES (4,'Piercing no dedão do pé','Não dói',70)
   ''',
 ];
+
+const criarEstudio = '''
+ CREATE TABLE estudio(
+    id INTEGER NOT NULL PRIMARY KEY
+    ,nome VARCHAR(50) NOT NULL
+    ,descricao VARCHAR(255) NOT NULL
+    ,urlAvatar
+  )
+''';
+
+const insercoesEstudio = [
+  '''
+  INSERT INTO estudio (nome, descricao)
+  VALUES ('Tinker's Workshop','Estudio técnico')
+  ''',
+  '''
+  INSERT INTO estudio (nome, descricao)
+  VALUES ('Lula's Tainting','Só o polvão')
+  ''',
+  '''
+  INSERT INTO estudio (nome, descricao)
+  VALUES ('ColorMaster','Estudio bing chilling')
+  ''',
+  '''
+  INSERT INTO estudio (nome, descricao)
+  VALUES ('Fura Pé','Venha furar seu pé')
+  '''
+];
+
+const criarEstudioFavorito = ''' CREATE TABLE estudio_favorito (
+  id_usuario INT,
+  id_estudio INT,
+  data_adicionado DATETIME DEFAULT NOW(),
+  
+  PRIMARY KEY (id_usuario, id_estudio),
+  FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
+  FOREIGN KEY (id_estudio) REFERENCES estudios(id)
+) ''';
+
+const insercoesEstudiosFavorito = [
+  '''
+  INSERT INTO estudio_favorito (id_usuario, id_estudio)
+  VALUES (1,1)
+  ''',
+  '''
+  INSERT INTO estudio_favorito (id_usuario, id_estudio)
+  VALUES (2,2)
+  ''',
+  '''
+  INSERT INTO estudio_favorito (id_usuario, id_estudio)
+  VALUES (3,3)
+  ''',
+  '''
+  INSERT INTO estudio_favorito (id_usuario, id_estudio)
+  VALUES (4,4)
+  '''
+];
