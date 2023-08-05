@@ -9,6 +9,8 @@ import 'package:oktopus/view/busca.dart';
 import 'package:oktopus/view/cadastro_usuario.dart';
 import 'package:oktopus/view/chat.dart';
 import 'package:oktopus/view/estudio.dart';
+import 'package:oktopus/view/estudio_favorito_form.dart';
+import 'package:oktopus/view/estudio_favorito_lista.dart';
 import 'package:oktopus/view/home.dart';
 import 'package:oktopus/view/index.dart';
 import 'package:oktopus/view//login.dart';
@@ -46,6 +48,8 @@ class App extends StatelessWidget {
         Rotas.agendamentosLista: (context) => AgendamentosLista(),
         Rotas.agendamentoDetalhe: (context) => AgendamentoDetalhe(),
         Rotas.agendamentoForm: (context) => AgendamentoForm(),
+        Rotas.estudioFavoritoLista: (context) => EstudioFavoritosLista(),
+        Rotas.estudioFavoritoForm: (context) => EstudioFavoritoForm(),
       },
     );
   }

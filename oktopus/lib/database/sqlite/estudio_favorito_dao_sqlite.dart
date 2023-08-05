@@ -13,7 +13,7 @@ class EstudioFavoritoDAOSQLite implements EstudioFavoritoInterfaceDao {
   @override
   Future<EstudioFavorito> consultarPorUsuario(int usuarioId) async {
     Database db = await Conexao.criar();
-    List<Map> maps = await db.query('EstudioFavorito', where: 'usuario_id = ?', whereArgs: [usuarioId]);
+    List<Map> maps = await db.query('estudio_favorito', where: 'usuario_id = ?', whereArgs: [usuarioId]);
     if (maps.isEmpty){
       throw Exception('Não foi encontrado registro com este id');
     }
@@ -24,7 +24,7 @@ class EstudioFavoritoDAOSQLite implements EstudioFavoritoInterfaceDao {
   @override
   Future<List<EstudioFavorito>> consultarTodos() async {
     Database db = await Conexao.criar();
-    List<Map<dynamic,dynamic>> resultadoBD = await db.query('estudioFavorito');
+    List<Map<dynamic,dynamic>> resultadoBD = await db.query('estudio_favorito');
     List<EstudioFavorito> lista = [];
     for(var registro in resultadoBD){
       var estudioFavorito = await converterEstudioFavorito(registro);
@@ -36,7 +36,7 @@ class EstudioFavoritoDAOSQLite implements EstudioFavoritoInterfaceDao {
   @override
   Future<bool> excluir(usuarioId, estudioId) async {
     Database db = await Conexao.criar();
-    var sql = 'DELETE FROM estudioFavorito WHERE usuario_id = ? AND estudio_id = ?';
+    var sql = 'DELETE FROM estudio_favorito WHERE usuario_id = ? AND estudio_id = ?';
     int linhasAfetas = await db.rawDelete(sql, [usuarioId, estudioId]);
     return linhasAfetas > 0;
   }
@@ -47,7 +47,7 @@ class EstudioFavoritoDAOSQLite implements EstudioFavoritoInterfaceDao {
     String sql;
 
       sql =
-      'INSERT INTO estudioFavorito (usuario_id, estudio_id) VALUES (?,?)';
+      'INSERT INTO estudio_favorito (usuario_id, estudio_id) VALUES (?,?)';
       await db.rawInsert(
           sql, [estudioFavorito.usuario.id, estudioFavorito.estudio.id]);
       estudioFavorito = EstudioFavorito(

@@ -8,7 +8,7 @@ class EstudioDAOSQLite implements EstudioInterfaceDao {
   Future<Estudio> consultar(int id) async {
     Database db = await Conexao.criar();
     List<Map> maps =
-    await db.query('Estudio', where: 'id = ?', whereArgs: [id]);
+    await db.query('estudio', where: 'id = ?', whereArgs: [id]);
     if (maps.isEmpty) {
       throw Exception('Não foi encontrado registro com este id');
     }

@@ -17,4 +17,6 @@ class Rotas {
   static const agendamentosLista = 'agendamentos-lista';
   static const agendamentoDetalhe = 'agendamento-detalhe';
   static const agendamentoForm = 'agendamento-form';
+  static const estudioFavoritoLista = 'estudio-favorito-lista';
+  static const estudioFavoritoForm = 'estudio-favorito-form';
 }

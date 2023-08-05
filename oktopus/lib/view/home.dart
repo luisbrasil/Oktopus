@@ -41,6 +41,10 @@ class Home extends StatelessWidget {
             icon: Icon(Icons.search),
             label: 'Buscar Estúdios',
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.list_alt),
+            label: 'Estudios Favoritos',
+          ),
         ],
         onTap: (int index) {
           switch (index) {
@@ -49,6 +53,9 @@ class Home extends StatelessWidget {
               break;
             case 1:
               Navigator.pushNamed(context, Rotas.busca);
+              break;
+            case 2:
+              Navigator.pushNamed(context, Rotas.estudioFavoritoLista );
               break;
           }
         },

@@ -127,11 +127,11 @@ const criarEstudio = '''
 const insercoesEstudio = [
   '''
   INSERT INTO estudio (nome, descricao)
-  VALUES ('Tinker's Workshop','Estudio técnico')
+  VALUES ('Tinkers Workshop','Estudio técnico')
   ''',
   '''
   INSERT INTO estudio (nome, descricao)
-  VALUES ('Lula's Tainting','Só o polvão')
+  VALUES ('Lulas Tainting','Só o polvão')
   ''',
   '''
   INSERT INTO estudio (nome, descricao)
@@ -143,31 +143,32 @@ const insercoesEstudio = [
   '''
 ];
 
-const criarEstudioFavorito = ''' CREATE TABLE estudio_favorito (
-  id_usuario INT,
-  id_estudio INT,
-  data_adicionado DATETIME DEFAULT NOW(),
+const criarEstudioFavorito = '''CREATE TABLE estudio_favorito (
+  usuario_id INT,
+  estudio_id INT,
+  data_adicionado DATETIME DEFAULT CURRENT_TIMESTAMP,
   
-  PRIMARY KEY (id_usuario, id_estudio),
-  FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
-  FOREIGN KEY (id_estudio) REFERENCES estudios(id)
-) ''';
+  PRIMARY KEY (usuario_id, estudio_id),
+  FOREIGN KEY (usuario_id) REFERENCES usuario (id),
+  FOREIGN KEY (usuario_id) REFERENCES estudio (id)
+);
+''';
 
 const insercoesEstudiosFavorito = [
   '''
-  INSERT INTO estudio_favorito (id_usuario, id_estudio)
+  INSERT INTO estudio_favorito (usuario_id, estudio_id)
   VALUES (1,1)
   ''',
   '''
-  INSERT INTO estudio_favorito (id_usuario, id_estudio)
+  INSERT INTO estudio_favorito (usuario_id, estudio_id)
   VALUES (2,2)
   ''',
   '''
-  INSERT INTO estudio_favorito (id_usuario, id_estudio)
+  INSERT INTO estudio_favorito (usuario_id, estudio_id)
   VALUES (3,3)
   ''',
   '''
-  INSERT INTO estudio_favorito (id_usuario, id_estudio)
+  INSERT INTO estudio_favorito (usuario_id, estudio_id)
   VALUES (4,4)
   '''
 ];
